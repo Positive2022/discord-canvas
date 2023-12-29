@@ -1,11 +1,11 @@
 {
   "name": "discord-canvas",
   "version": "1.5.2",
-  "description": "A package to simplifie the usage of canvas for Discord !",
+  "description": "A package to simplify the usage of canvas for Discord!",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xixi52/discord-canvas.git"
+    "url": "git+https://github.com/21z/discord-canvas.git"
   },
   "keywords": [
     "Discord.js",
@@ -16,11 +16,11 @@
   "author": "xixi52",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/xixi52/discord-canvas/issues"
+    "url": "https://github.com/21z/discord-canvas/issues"
   },
-  "homepage": "https://github.com/xixi52/discord-canvas#readme",
+  "homepage": "https://github.com/21z/discord-canvas#readme",
   "dependencies": {
-    "canvas": "^2.10.1",
+    "canvas": "2.10.2",
     "fortnite-9812": "^1.0.4",
     "fortnite": "^4.3.2",
     "moment": "^2.29.4"

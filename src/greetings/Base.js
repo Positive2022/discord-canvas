@@ -8,7 +8,7 @@ module.exports = class Greeting {
         this.guildName = "ServerName";
         this.colorTitleBorder = "#000000";
         this.colorMemberCount = "#ffffff";
-        this.textMemberCount = "- {count}th member !";
+        this.textMemberCount = "- {count} member !";
         this.memberCount = "0";
         this.backgroundImage = `${__dirname}/../../assets/img/1px.png`;
         this.avatar = `${__dirname}/../../assets/img/default-avatar.png`;
@@ -81,7 +81,7 @@ module.exports = class Greeting {
         const ctx = canvas.getContext("2d");
 
         const guildName = this.textMessage.replace(/{server}/g, this.guildName);
-        const memberCount = this.textMemberCount.replace(/{count}/g, this.memberCount);
+        const memberCount = this.textMemberCount.replace(/{count}/g, Ordinal(this.memberCount));
 
         // Draw background
         ctx.fillStyle = this.colorBackground;
@@ -101,7 +101,7 @@ module.exports = class Greeting {
         ctx.fillRect(344, canvas.height - 296, 625, 65);
         ctx.fillStyle = this.colorDiscriminatorBox;
         ctx.globalAlpha = this.opacityDiscriminatorBox;
-        ctx.fillRect(389, canvas.height - 225, 138, 65);
+        ctx.fillRect(389, canvas.height - 225, 500, 65);
         ctx.fillStyle = this.colorMessageBox;
         ctx.globalAlpha = this.opacityMessageBox;
         ctx.fillRect(308, canvas.height - 110, 672, 65);
@@ -154,3 +154,9 @@ module.exports = class Greeting {
         return canvas;
     }
 };
+
+function Ordinal(number) {
+    var s = ["th", "st", "nd", "rd"],
+        v = number % 100;
+    return number + (s[(v - 20) % 10] || s[v] || s[0]);
+  }
